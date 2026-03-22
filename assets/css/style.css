@@ -482,3 +482,13 @@ footer p {
 .lightbox-overlay img:hover {
     transform: scale(1.02);
 }
+
+/* Change cursor to hand (pointer) on project images */
+.project-img {
+    cursor: pointer;
+    transition: transform 0.3s ease; /* optional: adds a subtle zoom on hover */
+}
+
+.project-img:hover {
+    transform: scale(1.05); /* optional: slight zoom for interactivity */
+}
