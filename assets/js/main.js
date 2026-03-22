@@ -1,5 +1,5 @@
-// Main navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mobile menu toggle (if you add one later)
+    // Mobile menu toggle (optional)
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     if (mobileMenuButton) {
         mobileMenuButton.addEventListener('click', function() {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add active class to current navigation item
+    // Active nav highlight
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav ul li a').forEach(link => {
         const linkPage = link.getAttribute('href').split('/').pop() || 'index.html';
@@ -35,36 +35,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Project page specific functionality
-    if (window.location.pathname.includes('projects/')) {
-        // Add any project-specific JavaScript here
-        console.log('Project page loaded');
-    }
-});
+    // 🔥 LIGHTBOX FIX (IMPORTANT)
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const projectImages = document.querySelectorAll('.project-img');
 
-// Function to handle Power BI dashboard embedding
-function embedPowerBIDashboard() {
-    // This would be replaced with actual Power BI embedding code
-    console.log('Power BI dashboard embedded');
-}
+    projectImages.forEach(img => {
+        img.style.cursor = "pointer"; // ensures hand cursor
 
-// Initialize any additional components
-document.addEventListener('DOMContentLoaded', embedPowerBIDashboard);
-
-// LIGHTBOX FUNCTIONALITY
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-const projectImages = document.querySelectorAll('.project-img');
-
-projectImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';      // Show overlay
-        lightboxImg.src = img.src;            // Use clicked image source
-        lightboxImg.alt = img.alt;            // Optional: use alt text
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+        });
     });
-});
 
-// Close lightbox when clicking anywhere
-lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
+    // Close lightbox
+    lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
 });
