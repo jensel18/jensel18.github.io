@@ -58,13 +58,13 @@ const projectImages = document.querySelectorAll('.project-img');
 
 projectImages.forEach(img => {
     img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
+        lightbox.style.display = 'flex';      // Show overlay
+        lightboxImg.src = img.src;            // Use clicked image source
+        lightboxImg.alt = img.alt;            // Optional: use alt text
     });
 });
 
-// Close lightbox when clicking overlay
+// Close lightbox when clicking anywhere
 lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
 });
