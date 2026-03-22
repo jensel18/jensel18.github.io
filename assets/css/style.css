@@ -457,3 +457,18 @@ footer p {
         padding-bottom: 30px;
     }
 }
+
+/* Target all project images */
+.project-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth zoom */
+    cursor: pointer; /* Optional: pointer on hover */
+}
+
+/* Zoom effect on hover */
+.project-card img:hover {
+    transform: scale(1.2); /* Adjust the scale as needed */
+    z-index: 10; /* Ensures it stays above other content */
+    position: relative; /* Needed for z-index to work */
+}
