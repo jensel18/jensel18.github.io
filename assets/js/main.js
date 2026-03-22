@@ -68,3 +68,7 @@ projectImages.forEach(img => {
 lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
 });
+// Close lightbox when clicking overlay
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
