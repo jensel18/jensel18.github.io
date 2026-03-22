@@ -68,25 +68,3 @@ projectImages.forEach(img => {
 lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
 });
-// Close lightbox when clicking overlay
-lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-
-// LIGHTBOX FUNCTIONALITY
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-const projectImages = document.querySelectorAll('.project-img');
-
-projectImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-    });
-});
-
-// Close lightbox when clicking overlay
-lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
